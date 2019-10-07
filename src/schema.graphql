@@ -9,13 +9,20 @@ type Mutation {
   signup(email: String!, password: String!, name: String!): AuthPayload
   login(email: String!, password: String!): AuthPayload
   updateLink(id: ID!, url: String, description: String): Link
+  vote(linkId: ID!): Vote
   deleteLink(id: ID!): Link
+}
+
+type Subscription {
+  newLink: Link
+  newVote: Vote
 }
 
 type Link {
   id: ID!
   description: String!
   url: String!
+  votes: [Vote!]!
   postedBy: User
 }
 
@@ -30,4 +37,11 @@ type User {
   email: String!
   password: String!
   links: [Link!]!
+  votes: [Vote!]!
+}
+
+type Vote {
+  id: ID!
+  link: Link!
+  user: User!
 }
