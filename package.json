@@ -1,0 +1,15 @@
+{
+  "name": "grapql-node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/htactive-trinhtc/grapql-node.git",
+  "author": "trinhtc <congtrinh097@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "graphql-yoga": "^1.18.3",
+    "jsonwebtoken": "^8.5.1",
+    "prisma": "^1.34.8",
+    "prisma-client-lib": "^1.34.8"
+  }
+}
