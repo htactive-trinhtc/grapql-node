@@ -1,5 +1,4 @@
 async function feed(parent, args, context, info) {
-  console.log("Query")
   const where = args.filter ? {
     OR: [
       { description_contains: args.filter },
@@ -8,7 +7,9 @@ async function feed(parent, args, context, info) {
   } : {}
 
   const links = await context.prisma.links({
-    where
+    where,
+    skip: args.skip,
+    first: args.first
   })
   return links
 }
